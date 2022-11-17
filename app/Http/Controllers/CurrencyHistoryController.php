@@ -7,11 +7,7 @@ use Illuminate\Http\Request;
 class CurrencyHistoryController extends Controller
 {
     public function history(Request $request){
-        if (is_null($request['start_date'])) {
-            $start_date = date('Y-m-d');
-        } else {
-            $start_date = $request['start_date'];
-        }
+        $start_date = is_null($request['start_date']) ? date('Y-m-d') : $request['start_date'];
         $end_date=is_null($request['end_date'])
             ?date('Y-m-d')
             :$request['end_date'];
