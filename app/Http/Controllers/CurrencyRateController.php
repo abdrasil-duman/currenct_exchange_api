@@ -14,6 +14,6 @@ class CurrencyRateController extends Controller
     {
         $currencyRate = new ParseCurrencyRate();
         $response = $currencyRate->handle();
-        dd($response);
+        return $response;
     }
 }
